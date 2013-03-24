@@ -17,9 +17,7 @@ Extract the archive using the zip utility of your choice. Once the archive has b
 ###Running the CRSD-ANT software
 Inside of the newly created "CRSD-ANT" folder there should be a file named "index.html". Open this file with the Firefox Web browser and follow the on-screen instructions.
 
-Important
----------
-The CRSD-ANT program will run in any browser, but timing accuracy is not guaranteed in 
+**Important Note:** The CRSD-ANT program will run in any browser, but timing accuracy is not guaranteed in 
 all browsers, and importantly, it is known to be faulty in Internet Explorer. 
 If you do not have Firefox, you can download it [here.](http://www.mozilla.org/en-US/firefox/new/)
 
