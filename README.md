@@ -12,6 +12,6 @@ Adding new stimulus images
 2. Create a second version of the image facing the opposite direction.
 3. Place both images in the images/targets folder and rename them to "NAMELeft.png" and "NAMERight.png". For example: a horse picture would become "HorseLeft.png" and "HorseRight.png".
 4. Add a reference to the image file on line 1 of the config/targetTypes.js file:
-```javascript
+```
 var stimList = ["Arrow", "Truck", "Hand", "Airplane", "Car", "Horse"];
 ```
