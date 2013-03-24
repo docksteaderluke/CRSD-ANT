@@ -1,0 +1,163 @@
+body {
+	background-color: #FFFFFF;
+	font-family: sans-serif;
+}
+
+#content {
+	position: fixed;
+	margin: 0 auto 0 auto;
+	top: 10%;
+	left: 10%;
+	width: 80%;
+	height: 80%;
+	max-height: 600px;
+	//overflow: hidden;
+	font-size: large;
+}
+
+.nextButton {
+	position: absolute;
+	bottom: 10px;
+	right: 5px;
+}
+
+.previousButton {
+	position: absolute;
+	bottom: 10px;
+	right: 55px;
+}
+
+/* @group Form Input */
+
+#image {
+	height: 200px;
+	width: 200px;
+}
+
+#formInput #browserWarning {
+	font-size: small;
+	margin-top: -15px;
+}
+
+#formInput label {
+	display: block;
+	font-weight: bold;
+	text-align: left;
+	width: 200px;
+	float: left;
+}
+
+#form {
+	position: relative;
+	margin: 0 auto 0 auto;
+	width: 360px;
+}
+
+#formInput #fullscreenNote {
+	font-size: small;
+}
+
+/* @end */
+
+/* @group Instructions */
+
+.instructionsPage {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: lightgrey;
+	overflow: auto;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
+
+.instructionsPage p{
+	margin: 5% 5% 2% 5%;
+}
+
+#instructionPage2 table {
+	text-align: center;
+}
+
+#instructionPage3 p {
+	position: relative;
+	top: -24px;
+}
+
+#instructionPage3 .imageintext {
+	position: relative;
+	top: 15px;
+}
+
+.targetTypeRef {
+	width: 6em;
+}
+
+
+/* @end */
+
+#testPageContainer {
+	position: fixed;
+}
+
+#testPage {
+	position: relative;
+}
+
+/* @group Display */
+
+.display {
+	position: absolute;
+}
+
+.target {
+	vertical-align: bottom;
+}
+
+.cue {
+	vertical-align: bottom;
+}
+
+
+.practiceFeedback {
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+}
+
+/* @end */
+
+
+/* @group Export Page */
+
+#exportPage {
+	font-size: medium;
+}
+
+.filename {
+	border: solid 1px;
+	width: auto;
+}
+
+/* @end */
+
+#attribution {
+	position: fixed;
+	z-index: -1;
+	bottom: 0;
+	right: 0;
+	width: 80px;
+}
+
+#attribution img {
+	vertical-align: bottom;
+}
+
+#idaioslogo {
+	background-color: #333334;
+	width: 80px;
+}
