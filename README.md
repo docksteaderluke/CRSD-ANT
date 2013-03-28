@@ -10,7 +10,7 @@ License
 -------
 This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California 94105, USA.
 
-Any original or modified version of this software must attribute the original work to "idaios", and include a hyperlink (or at very least a URL reference) to http://idaios.com
+Any original or modified version of this software must attribute the original work to the idaios, and include a hyperlink (or at very least a URL reference) to http://idaios.com.
 
 Installation
 ------------
@@ -28,7 +28,7 @@ all browsers, and importantly, it is known to be faulty in Internet Explorer.
 If you do not have Firefox, you can download it [here.](http://www.mozilla.org/en-US/firefox/new/)
 
 Adding new stimulus images
--------------------------------
+--------------------------
 1. Find image with an aspect ratio of 1:1, preferably 100x100 pixels. Images must be of type .png to allow for transparency.
 2. Create a second version of the image facing the opposite direction.
 3. Place both images in the images/targets folder and rename them to "NAMELeft.png" and "NAMERight.png". For example: a horse picture would become "HorseLeft.png" and "HorseRight.png".
@@ -36,6 +36,15 @@ Adding new stimulus images
 
 ```javascript
 var stimList = ["Arrow", "Truck", "Hand", "Airplane", "Car", "Horse"];
+```
+
+Modifying the number of test blocks
+-----------------------------------
+1. Open js/navigation.js in the text editor of your choice.
+2. Near the top of the file, change the following line, replacing "4" with the desired number of blocks:
+
+```javascript
+var numberOfTestBlocks = 4;
 ```
 
 Data files
