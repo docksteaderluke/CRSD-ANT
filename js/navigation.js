@@ -21,6 +21,7 @@ var viewStack = new Array();
 var setupData = [];
 var resultsData = [];
 var testBlock = 0;
+var numberOfTestBlocks = 4;
 
 function getInputData() {
 	id = document.getElementById('ID').value;
@@ -78,7 +79,7 @@ function testCallback(block, data) {
 	resultsData[block] = data;
 	document.getElementById('practiceFeedbackUP').style.visibility='hidden';
 	document.getElementById('practiceFeedbackDOWN').style.visibility='hidden';
-	if (testBlock<4) {
+	if (testBlock < numberOfTestBlocks) {
 		testBlock++;
 		if (testBlock%2)
 			alert('Are you ready to start Test#' + (testBlock+1)/2 + '?');

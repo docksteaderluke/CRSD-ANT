@@ -11,4 +11,5 @@ function onLoad() {
 		}
 	}
 	pushView('formInput');
+	document.getElementById("numberOfTestBlocks").innerHTML = numberOfTestBlocks;
 }
