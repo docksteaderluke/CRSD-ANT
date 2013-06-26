@@ -18,7 +18,7 @@ Any original or modified version of this software must attribute the original wo
 Installation
 ------------
 ###Download the source files
-Click on the "Zip" link in the sidebar above or simply click [here.](https://github.com/docksteaderluke/Attention-Network-Test/archive/master.zip)
+Click on the "Zip" link in the sidebar above or simply click [here.](https://github.com/docksteaderluke/CRSD-ANT/archive/master.zip)
 
 ###Extract the archive
 Extract the archive using the zip utility of your choice. Once the archive has been extracted a new folder named "CRSD-ANT" should now exist.
