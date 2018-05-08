@@ -17,15 +17,12 @@ function generateSummary(userInfo, results) {
 	var C4T1 = [];
 	var C4T2 = [];
 	var allResults = [];
-	if (results[1]) {
-		allResults = results[1];
-		if (results[2]) {
-			allResults = results[1].concat(results[2]);
-			if (results[3]) {
-				allResults = results[1].concat(results[2]).concat(results[3]);
-				if (results[3])
-					allResults = results[1].concat(results[2]).concat(results[3]).concat(results[4]);
-			}
+	
+	// Join all results sets
+	for (i in results){
+		// discard the practice round
+		if (i >= 1){
+			allResults = allResults.concat(results[i]);
 		}
 	}
 
