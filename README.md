@@ -17,13 +17,13 @@ Any original or modified version of this software must attribute the original wo
 
 Installation
 ------------
-###Download the source files
+### Download the source files
 Click on the "Zip" link in the sidebar above or simply click [here.](https://github.com/docksteaderluke/CRSD-ANT/archive/master.zip)
 
-###Extract the archive
+### Extract the archive
 Extract the archive using the zip utility of your choice. Once the archive has been extracted a new folder named "CRSD-ANT" should now exist.
 
-###Running the CRSD-ANT software
+### Running the CRSD-ANT software
 Inside of the newly created "CRSD-ANT" folder there should be a file named "index.html". Open this file with the Firefox Web browser and follow the on-screen instructions.
 
 **Important Note:** The CRSD-ANT program will run in any browser, but timing accuracy is not guaranteed in 
@@ -54,7 +54,7 @@ Data files
 ----------
 Description of Data Files Saved by the CRSD-ANT.
 
-###Table 1: Variables in the summary data file. 
+### Table 1: Variables in the summary data file. 
 
 |	Variable Name		|	Description												|	Source						|
 |-----------------------|-----------------------------------------------------------|-------------------------------|
@@ -124,7 +124,7 @@ duration for the target is 1500 ms, so that is also the maximum possible RT.
 [2] A trial is considered correct if the subject correctly indicated the direction of the target arrow, and if the RT was 
 within the range 100 to 1500 ms.
 
-###Table 2: Variables in the raw data file.
+### Table 2: Variables in the raw data file.
 
 |	Variable Name		|	Description												|	Source						|
 |-----------------------|-----------------------------------------------------------|-------------------------------|
