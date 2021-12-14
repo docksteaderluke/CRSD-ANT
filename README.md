@@ -26,6 +26,13 @@ Extract the archive using the zip utility of your choice. Once the archive has b
 ### Running the CRSD-ANT software
 Inside of the newly created "CRSD-ANT" folder there should be a file named "index.html". Open this file with the Firefox Web browser and follow the on-screen instructions.
 
+You can use a URL query to pre-populate some of the fields (ID, Session Number, Study ID, Group ID, and Age). This is done in the following format, where 'x' indicates a value:
+
+index.html?ID=x&sessionNumber=x&studyID=x&groupID=x&age=x
+
+The index.html page will extract the values if they are present and pre-populate the main.html page with those values, marking the text boxes as read-only.
+If one or more values are not present in the URL query, then the text boxes will will not be pre-populated and will be editable.
+
 **Important Note:** The CRSD-ANT program will run in any browser, but timing accuracy is not guaranteed in 
 all browsers, and importantly, it is known to be faulty in Internet Explorer. 
 If you do not have Firefox, you can download it [here.](http://www.mozilla.org/en-US/firefox/new/)
