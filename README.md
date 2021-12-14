@@ -50,15 +50,15 @@ Changing Keys to Press
 Under default operation, the left and right arrow keys are used. If you wish to change these (for example, changing them to E and I) you will need to do the following.
 1. open trial.js
 2. under the stage4Interrupted function, locate and change the following key values:
-  1. Left key:
+  - Left key:
 ```javascript
 if (e.keyCode == 37) {
 ```
-  2. Right key:
+  - Right key:
 ```javascript
 if (e.keyCode == 39) {
 ```
-  3. Change these values to the desired key values.
+  - Change these values to the desired key values.
 3. Either update the main.html page instructions to reflect these changes, or advise the participant of the change in keys.
 
 Adding new stimulus images
