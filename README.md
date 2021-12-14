@@ -30,7 +30,7 @@ You can use a URL query to pre-populate some of the fields (ID, Session Number, 
 
 > index.html?ID=x&sessionNumber=x&studyID=x&groupID=x&age=x
 
-The index.html page will extract the values if they are present and pre-populate the index.html page with those values, marking the text boxes as read-only.
+The index.html page will extract the values if they are present and pre-populate the main.html page with those values, marking the text boxes as read-only.
 If one or more values are not present in the URL query, then the text boxes will will not be pre-populated and will be editable.
 
 |	URL Query   |	Element Name	    |
@@ -59,7 +59,7 @@ if (e.keyCode == 37) {
 if (e.keyCode == 39) {
 ```
   - Change these values to the desired key values.
-3. Either update the index.html page instructions to reflect these changes, or advise the participant of the change in keys.
+3. Either update the main.html page instructions to reflect these changes, or advise the participant of the change in keys.
 
 Adding new stimulus images
 --------------------------
