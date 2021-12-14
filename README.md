@@ -28,7 +28,7 @@ Inside of the newly created "CRSD-ANT" folder there should be a file named "inde
 
 You can use a URL query to pre-populate some of the fields (ID, Session Number, Study ID, Group ID, and Age). This is done in the following format, where 'x' indicates a value:
 
-index.html?ID=x&sessionNumber=x&studyID=x&groupID=x&age=x
+> index.html?ID=x&sessionNumber=x&studyID=x&groupID=x&age=x
 
 The index.html page will extract the values if they are present and pre-populate the main.html page with those values, marking the text boxes as read-only.
 If one or more values are not present in the URL query, then the text boxes will will not be pre-populated and will be editable.
