@@ -20,6 +20,5 @@ function onLoad() {
 	}
 
 	// Populate form entries from URL and mark as read-only (urlpopulate.js)
-	extractFromURL();
 	populateFromURL();
 }
