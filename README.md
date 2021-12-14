@@ -51,9 +51,13 @@ Under default operation, the left and right arrow keys are used. If you wish to 
 1. open trial.js
 2. under the stage4Interrupted function, locate and change the following key values:
   1. Left key:
-        if (e.keyCode == 37) {
+```javascript
+if (e.keyCode == 37) {
+```
   2. Right key:
-        if (e.keyCode == 39) {
+```javascript
+if (e.keyCode == 39) {
+```
   3. Change these values to the desired key values.
 3. Either update the main.html page instructions to reflect these changes, or advise the participant of the change in keys.
 
