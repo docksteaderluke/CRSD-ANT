@@ -33,6 +33,14 @@ You can use a URL query to pre-populate some of the fields (ID, Session Number, 
 The index.html page will extract the values if they are present and pre-populate the main.html page with those values, marking the text boxes as read-only.
 If one or more values are not present in the URL query, then the text boxes will will not be pre-populated and will be editable.
 
+|	URL Query   |	Text Box Name	    |
+|---------------|-----------------------|
+|ID             |ID                     |
+|sessionID      |Session #              |
+|studyID        |Study ID               |
+|groupID        |Group ID  			    |
+|age            |Age          			|
+
 **Important Note:** The CRSD-ANT program will run in any browser, but timing accuracy is not guaranteed in 
 all browsers, and importantly, it is known to be faulty in Internet Explorer. 
 If you do not have Firefox, you can download it [here.](http://www.mozilla.org/en-US/firefox/new/)
