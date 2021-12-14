@@ -45,6 +45,18 @@ If one or more values are not present in the URL query, then the text boxes will
 all browsers, and importantly, it is known to be faulty in Internet Explorer. 
 If you do not have Firefox, you can download it [here.](http://www.mozilla.org/en-US/firefox/new/)
 
+Changing Keys to Press
+--------------------------
+Under default operation, the left and right arrow keys are used. If you wish to change these (for example, changing them to E and I) you will need to do the following.
+1. open trial.js
+2. under the stage4Interrupted function, locate and change the following key values:
+  1. Left key:
+        if (e.keyCode == 37) {
+  2. Right key:
+        if (e.keyCode == 39) {
+  3. Change these values to the desired key values.
+3. Either update the main.html page instructions to reflect these changes, or advise the participant of the change in keys.
+
 Adding new stimulus images
 --------------------------
 1. Find image with an aspect ratio of 1:1, preferably 100x100 pixels. Images must be of type .png to allow for transparency.
