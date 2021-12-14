@@ -33,7 +33,7 @@ function trialSet() {
 		[4,'congruent','DOWN','DOWN','R','R'], 
 		[4,'incongruent','UP','UP','L','R'],
 		[4,'incongruent','UP','UP','R','L'],
-//		[4,'incongruent','DOWN','DOWN','L','R'],
+		[4,'incongruent','DOWN','DOWN','L','R'],
 		[4,'incongruent','DOWN','DOWN','R','L']
 	];
 }

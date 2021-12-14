@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html manifest="ant.manifest" lang="en">
+<head>
+	<title>CRSD-ANT</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<script src="js/onLoad.js" type="text/javascript"></script>
+	<script src="js/timer.js" type="text/javascript"></script>
+	<script src="js/navigation.js" type="text/javascript"></script>
+	<script src="js/timer.js" type="text/javascript"></script>
+	<script src="js/export.js" type="text/javascript"></script>
+	<script src="js/random.js" type="text/javascript"></script>
+	<script src="js/analyzeResults.js" type="text/javascript"></script>
+	<script src="js/trial.js" type="text/javascript"></script>
+	<script src="js/statistics.js" type="text/javascript"></script>
+	<script src="js/dates.js" type="text/javascript"></script>
+	<script src="js/display.js" type="text/javascript"></script>
+	<script src="js/urlpopulate.js" type="text/javascript"></script>
+
+	<script src="config/trialSet.js" type="text/javascript"></script>
+	<script src="config/targetTypes.js" type="text/javascript"></script>
+	<script src="config/dimensions.js" type="text/javascript"></script>
+</head>
+<body onload="onLoad();">
+	<div id="content">
+		<div id="formInput" class="instructionsPage" > <!-- style="height:815px" -->
+			<center>
+			<br />
+			<img src="images/Logo.png" id='logo' width="25%"/>
+			<div name="firefox" id="firefox">
+				<h4>This testing utility is designed for use with Firefox.</h4>
+				<p id="browserWarning">Other browsers are UNSUPPORTED but may work.  Internet Explorer will yield INACCURATE results and is NOT recommended.</p>
+			</div>
+			<p>Please enter the following information:</p>
+			</center>
+			<form name="form" id="form">
+				<label>ID:</label>
+				<input type="text" name="ID" id="ID" required/>
+				<br />
+				<label>Session #:</label>
+				<input type="text" name="sessionNumber" id="sessionNumber" required/>
+				<br />
+				<label>Study ID:</label>
+				<input type="text" name="studyID" id="studyID" required/>
+				<br />
+				<label>Group ID:</label>
+				<input type="text" name="groupID" id="groupID" required/>
+				<br />
+				<label>Age:</label>
+				<input type="text" name="age" id="age" required/>
+				<br />
+				<table id=genderTable>
+					<tr>
+						<td>
+							<label>Gender:</label>
+						</td>
+						<td>
+							<input type="radio" name="gender" value="M" />Male
+						</td>
+					</tr>
+					<tr>
+						<td></td><td>
+							<input type="radio" name="gender" value="F" />Female
+						</td>
+					</tr>
+					<tr>
+						<td></td><td>
+							<input type="radio" name="gender" value="N" />Non-Binary
+						</td>
+					</tr>
+					<tr>
+						<td></td><td>
+							<input type="radio" name="gender" value="X" />Prefer not to say
+						</td>
+					</tr>
+				</table>
+				<label>Target Type:</label>
+				<select name="targetType" id="targetType" size="1">
+				</select>
+				<br />
+				<label>Monitor Diagonal:</label>
+				<select name="monitorSize" id="monitorSize">
+					<option value="7">7"</option>
+					<option value="8">8"</option>
+					<option value="9">9"</option>
+					<option value="10">10"</option>
+					<option value="11">11"</option>
+					<option value="12">12"</option>
+					<option value="13">13"</option>
+					<option value="14">14"</option>
+					<option value="15">15"</option>
+					<option value="16">16"</option>
+					<option value="17" selected>17"</option>
+					<option value="18">18"</option>
+					<option value="19">19"</option>
+					<option value="20">20"</option>
+					<option value="21">21"</option>
+					<option value="22">22"</option>
+					<option value="23">23"</option>
+					<option value="24">24"</option>
+					<option value="25">25"</option>
+					<option value="26">26"</option>
+					<option value="27">27"</option>
+					<option value="28">28"</option>
+					<option value="29">29"</option>
+					<option value="30">30"</option>
+				</select>
+
+				<br />
+			</form>
+			<center>
+			<p id="fullscreenNote">For best experience, use fullscreen (<span class='fullscreenKey'>F11</span>)</p>
+			</center>
+			<button class="previousButton" onclick="window.location.reload();" Style="bottom:10px">Reset</button>
+			<button class="nextButton" onclick="submitForm();" Style="bottom:10px">Next</button>
+		</div>
+
+		<div id="instructionPage1" class="instructionsPage" style="visibility:hidden">
+			<p>This test measures some aspects of attention, and takes about 10 minutes to complete.</p>
+			<p>You will see 5 <b><span class='targetTypeRef'>target</span>s</b> on the computer screen</p>
+			<center>
+			<img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" />
+			</center>
+			<p>You must pay attention to the <b><i>CENTRAL</i></b> <span class='targetTypeRef'>target</span>, and indicate which way it is pointing by pressing the left or right arrow keys on the keyboard.
+			</p>
+			<input class="previousButton" type="button" name="previous" value="Previous" onclick="popView();" />
+			<input class="nextButton" type="button" name="next" value="Next" onclick="pushView('instructionPage2');" />
+		</div>
+
+		<div id="instructionPage2" class="instructionsPage" style="visibility:hidden">
+			<p>There will always be a cross in the centre of the screen, and the <span class='targetTypeRef'>target</span>s will appear just above or below the cross.</p>
+			<center>
+				<table id="instructionPageTable">
+					<tr>
+						<td><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /></td>
+						<td class="spacing"></td>
+						<td class="spacing"></td>
+					</tr>
+					<tr>
+						<td class="spacing"></td>
+						<td class="spacing"></td>
+						<td class="spacing"></td>
+					</tr>
+					<tr>
+						<td><img src="images/plus.png" class="cue" /></td>
+						<td class="spacing">OR</td>
+						<td><img src="images/plus.png" class="cue" /></td>
+					</tr>
+					<tr>
+						<td class="spacing"></td>
+						<td class="spacing"></td>
+						<td class="spacing"></td>
+					</tr>
+					<tr>
+						<td class="spacing"></td>
+						<td class="spacing"></td>
+						<td><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /></td>
+					</tr>
+				</table>
+			</center>
+			<p>Please try to keep your eyes fixed on the cross during the test, rather than moving them to look at the <u><span class='targetTypeRef'>target</span>s</u>.</p>
+			<input class="previousButton" type="button" name="previous" value="Previous" onclick="popView();" />
+			<input class="nextButton" type="button" name="next" value="Next" onclick="pushView('instructionPage3');" />
+		</div>
+
+		<div id="instructionPage3" class="instructionsPage" style="visibility:hidden">
+			<p>Sometimes, one or more asterisks <img src="images/star.png" class="cue imageintext" /> will appear shortly before the <span class='targetTypeRef'>target</span>s.</p>
+			<p>When they are presented, the asterisks always appear exactly one half second before the <span class='targetTypeRef'>target</span>s.</p>
+			<p>If only one asterisk appears, and it is above or below the cross, it also tells you the location in which the <span class='targetTypeRef'>target</span>s will appear.</p>
+			<input class="previousButton" type="button" name="previous" value="Previous" onclick="popView();" />
+			<input class="nextButton" type="button" name="next" value="Next" onclick="pushView('instructionPage4');" />
+		</div>
+
+		<div id="instructionPage4" class="instructionsPage" style="visibility:hidden">
+			<p>As mentioned earlier, you must pay attention to the central <span class='targetTypeRef'>target</span>, and indicate which way it is pointing by pressing the left or right arrow keys on the keyboard.</p>
+			<p>This test measures both your reaction time and your accuracy, so it is important to respond as quickly as you can, but without making too many errors.</p>
+			<p>To facilitate quick responding, keep your left and right index fingers over the left and right arrow keys respectively.</p>
+			<input class="previousButton" type="button" name="previous" value="Previous" onclick="popView();" />
+			<input class="nextButton" type="button" name="next" value="Next" onclick="pushView('instructionPage5');" />
+		</div>
+
+		<div id="instructionPage5" class="instructionsPage" style="visibility:hidden">
+			<p>There are <span id="numberOfTestBlocks"></span> blocks of trials, with short breaks in between.</p>
+			<p>The first block is for practice, and takes about 2 minutes.</p>
+			<p>If you make a mistake during the practice block, an error message will appear.  If no error message appears, you will know that you responded correctly.</p>
+			<p>No feedback is given during the 2 test blocks.</p>
+			<p>Please tell the test supervisor if you are ready to begin.</p>
+			<input class="previousButton" type="button" name="previous" value="Previous" onclick="popView();" />
+			<input class="nextButton" type="button" name="next" value="Next" onclick="areYouReady();" />
+		</div>
+		<div id="testPageContainer" style="visibility:hidden">
+			<div id="testPage" style="visibility:hidden">
+				<center>
+				<!--Blank View-->
+				<div id="blankView" class="display" style="visibility:hidden">
+				</div>
+				<!--No Cue-->
+				<div id="cueType10" class="display" style="visibility:hidden">
+					<div class="frameMargin"></div>
+					<div class="target"></div>
+					<div class="spacing"></div>
+					<img src="images/plus.png" class="cue" />
+					<div class="spacing"></div>
+					<div class="target"></div>
+					<div class="frameMargin"></div>
+				</div>
+				<!--Center Cue-->
+				<div id="cueType20" class="display" style="visibility:hidden">
+					<div class="frameMargin"></div>
+					<div class="target"></div>
+					<div class="spacing"></div>
+					<img src="images/star.png" class="cue" />
+					<div class="spacing"></div>
+					<div class="target"></div>
+					<div class="frameMargin"></div>
+				</div>
+				<!--Double Cue-->
+				<div id="cueType30" class="display" style="visibility:hidden">
+					<div class="frameMargin"></div>
+					<img src="images/star.png" class="cue" />
+					<div class="spacing"></div>
+					<img src="images/plus.png" class="cue" />
+					<div class="spacing"></div>
+					<img src="images/star.png" class="cue" />
+					<div class="frameMargin"></div>
+				</div>
+				<!--Top Cue-->
+				<div id="cueType4UP" class="display" style="visibility:hidden">
+					<div class="frameMargin"></div>
+					<img src="images/star.png" class="cue" />
+					<div class="spacing"></div>
+					<img src="images/plus.png" class="cue" />
+					<div class="spacing"></div>
+					<div class="target"></div>
+					<div class="frameMargin"></div>
+				</div>
+				<!--Bottom Cue-->
+				<div id="cueType4DOWN" class="display" style="visibility:hidden">
+					<div class="frameMargin"></div>
+					<div class="target"></div>
+					<div class="spacing"></div>
+					<img src="images/plus.png" class="cue" />
+					<div class="spacing"></div>
+					<img src="images/star.png" class="cue" />
+					<div class="frameMargin"></div>
+				</div>
+				<!--Top Congruent Right-->
+				<div id="congruentUPR" class="display" style="visibility:hidden">
+					<div class="frameMargin"></div>
+					<img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" />
+					<div class="spacing"></div>
+					<img src="images/plus.png" class="cue" />
+					<div class="spacing"></div>
+					<div class="target"></div>
+					<div class="frameMargin"></div>
+				</div>
+				<!--Top Congruent Left-->
+				<div id="congruentUPL" class="display" style="visibility:hidden">
+					<div class="frameMargin"></div>
+					<img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" />
+					<div class="spacing"></div>
+					<img src="images/plus.png" class="cue" />
+					<div class="spacing"></div>
+					<div class="target"></div>
+					<div class="frameMargin"></div>
+				</div>
+				<!--Top Incongruent Right-->
+				<div id="incongruentUPR" class="display" style="visibility:hidden">
+					<div class="frameMargin"></div>
+					<img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" />
+					<div class="spacing"></div>
+					<img src="images/plus.png" class="cue" />
+					<div class="spacing"></div>
+					<div class="target"></div>
+					<div class="frameMargin"></div>
+				</div>
+				<!--Top Incongruent Left-->
+				<div id="incongruentUPL" class="display" style="visibility:hidden">
+					<div class="frameMargin"></div>
+					<img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" />
+					<div class="spacing"></div>
+					<img src="images/plus.png" class="cue" />
+					<div class="spacing"></div>
+					<div class="target"></div>
+					<div class="frameMargin"></div>
+				</div>
+				<!--Bottom Congruent Right-->
+				<div id="congruentDOWNR" class="display" style="visibility:hidden">
+					<div class="frameMargin"></div>
+					<div class="target"></div>
+					<div class="spacing"></div>
+					<img src="images/plus.png" class="cue" />
+					<div class="spacing"></div>
+					<img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" />
+					<div class="frameMargin"></div>
+				</div>
+				<!--Bottom Congruent Left-->
+				<div id="congruentDOWNL" class="display" style="visibility:hidden">
+					<div class="frameMargin"></div>
+					<div class="target"></div>
+					<div class="spacing"></div>
+					<img src="images/plus.png" class="cue" />
+					<div class="spacing"></div>
+					<img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" />
+					<div class="frameMargin"></div>
+				</div>
+				<!--Bottom Incongruent Right-->
+				<div id="incongruentDOWNR" class="display" style="visibility:hidden">
+					<div class="frameMargin"></div>
+					<div class="target"></div>
+					<div class="spacing"></div>
+					<img src="images/plus.png" class="cue" />
+					<div class="spacing"></div>
+					<img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" />
+					<div class="frameMargin"></div>
+				</div>
+				<!--Bottom Incongruent Left-->
+				<div id="incongruentDOWNL" class="display" style="visibility:hidden">
+					<div class="frameMargin"></div>
+					<div class="target"></div>
+					<div class="spacing"></div>
+					<img src="images/plus.png" class="cue" />
+					<div class="spacing"></div>
+					<img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowLeft.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" /><img src="images/targets/ArrowRight.png" class="target" />
+					<div class="frameMargin"></div>
+				</div>
+				<!--Practice Feedback-->
+				</center>
+				<div id="practiceFeedbackUP" class="practiceFeedback"></div>
+				<div id="practiceFeedbackDOWN" class="practiceFeedback"></div>
+			</div>
+		</div>
+		<div id="exportPage" class="instructionsPage" style="visibility:hidden">
+			<center>
+				<h1>Save Data</h1>
+				<h3>Click the links below to save your test data.</h3>
+					<div id="dataDownload"></div>
+					<div id="summaryDownloadLink"></div>
+					<br />
+					<div id="dataDownloadLink"></div>
+			</center>
+		</div>
+	</div>
+	<div id="attribution">
+		<a href="http://idaios.com/"><img src="images/idaios.png" id="idaioslogo" /></a>
+		<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons Licence" style="border-width:0" src="images/cc-by-nc-sa.png" /></a>
+	</div>
+</body>
+</html>

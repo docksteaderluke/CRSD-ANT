@@ -12,4 +12,13 @@ function onLoad() {
 	}
 	pushView('formInput');
 	document.getElementById("numberOfTestBlocks").innerHTML = numberOfTestBlocks;
+
+	// Check if browser being used is Firefox
+	var isFirefox = typeof InstallTrigger !== 'undefined';
+	if (isFirefox) {
+		document.getElementById("firefox").style.display = "none";
+	}
+
+	// Populate form entries from URL and mark as read-only (urlpopulate.js)
+	populateFromURL();
 }

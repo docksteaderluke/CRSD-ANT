@@ -26,9 +26,40 @@ Extract the archive using the zip utility of your choice. Once the archive has b
 ### Running the CRSD-ANT software
 Inside of the newly created "CRSD-ANT" folder there should be a file named "index.html". Open this file with the Firefox Web browser and follow the on-screen instructions.
 
+You can use a URL query to pre-populate some of the fields (ID, Session Number, Study ID, Group ID, and Age). This is done in the following format, where 'x' indicates a value:
+
+> index.html?ID=x&sessionNumber=x&studyID=x&groupID=x&age=x
+
+The index.html page will extract the values if they are present and pre-populate the main.html page with those values, marking the text boxes as read-only.
+If one or more values are not present in the URL query, then the text boxes will will not be pre-populated and will be editable.
+
+|	URL Query   |	Element Name	    |
+|---------------|-----------------------|
+|ID             |ID                     |
+|sessionID      |Session #              |
+|studyID        |Study ID               |
+|groupID        |Group ID  			    |
+|age            |Age          			|
+
 **Important Note:** The CRSD-ANT program will run in any browser, but timing accuracy is not guaranteed in 
 all browsers, and importantly, it is known to be faulty in Internet Explorer. 
 If you do not have Firefox, you can download it [here.](http://www.mozilla.org/en-US/firefox/new/)
+
+Changing Keys to Press
+--------------------------
+Under default operation, the left and right arrow keys are used. If you wish to change these (for example, changing them to E and I) you will need to do the following.
+1. open trial.js
+2. under the stage4Interrupted function, locate and change the following key values:
+  - Left key:
+```javascript
+if (e.keyCode == 37) {
+```
+  - Right key:
+```javascript
+if (e.keyCode == 39) {
+```
+  - Change these values to the desired key values.
+3. Either update the main.html page instructions to reflect these changes, or advise the participant of the change in keys.
 
 Adding new stimulus images
 --------------------------

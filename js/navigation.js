@@ -21,7 +21,7 @@ var viewStack = new Array();
 var setupData = [];
 var resultsData = [];
 var testBlock = 0;
-var numberOfTestBlocks = 4;
+var numberOfTestBlocks = 4; // Test Block Size
 
 function getInputData() {
 	id = document.getElementById('ID').value;

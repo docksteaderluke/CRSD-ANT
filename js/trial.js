@@ -91,7 +91,7 @@ function stage4Interrupted(e) {
 		e = window.event;												//If IE, use window.event instead
 	}
 	//Check if it was a key we care about (left or right arrow)
-	if (e.keyCode == 37) {
+	if (e.keyCode == 37) {												//Left Key
 		document.onkeydown = earlyEnd;									//We're in!  Disable interrupt
 		trialResults[currentTrial][7] = interruptTimer(stage4Timer);	//Stop the timer and get the reaction time
 		trialResults[currentTrial][8] = e.keyCode;						//Save the keycode for later
@@ -103,7 +103,7 @@ function stage4Interrupted(e) {
 			practiceFeedbackDOWN.innerHTML = 'Incorrect';
 		}
 		stage5();														//Proceed to next stage
-	} else if (e.keyCode == 39) {
+	} else if (e.keyCode == 39) {										//Right Key
 		document.onkeydown = earlyEnd;									//We're in!  Disable interrupt
 		trialResults[currentTrial][7] = interruptTimer(stage4Timer);	//Stop the timer and get the reaction time
 		trialResults[currentTrial][8] = e.keyCode;						//Save the keycode for later
