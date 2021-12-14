@@ -24,12 +24,7 @@ function dataURI(csvData,mimeType) {
 	return "data:"+mimeType+";charset=utf-8,"+csvData;
 }
 
-function createExportLink(divName,data) {
-	document.getElementById(divName).innerHTML = '<a href="'+dataURI(dataCSV(data,'%0D%0A'),'text/plain')+'" target="_blank">View results in a new window.</a>';
-}
-
-//Gerates the download link to download the data as .csv
-
+//Generates the download link to download the data as .csv
 function createDownloadLink(divName,exportFilename,data,downloadLinkText) {
 	document.getElementById(divName).innerHTML = '<a href="'+dataURI(dataCSV(data,'%0D%0A'),'text/plain')+'" download="'+exportFilename+'" target="_blank">'+downloadLinkText+'</a>';
 }
@@ -42,12 +37,7 @@ function generateExportLink(data) {
 	var csvData = generateData(setupData,data)
 	var csvSummary = generateSummary(setupData,data)
 
-	//To create the new tab links
-	createExportLink('summaryExportLink',fileName+' - Summary.csv',csvSummary);
-	createExportLink('dataExportLink',fileName+' - Data.csv',csvData);
 	//To create the download link
-	createDownloadLink('dataDownloadLink',fileName+' - Data.csv',csvData,"Download raw data export");
-	//Set textbox values
-	document.getElementById('summaryFilename').value = fileName+' - Summary.csv';
-	document.getElementById('dataFilename').value = fileName+' - Data.csv';
+	createDownloadLink('summaryDownloadLink',fileName+' - Summary.csv',csvSummary,"Export Summary");
+	createDownloadLink('dataDownloadLink',fileName+' - Data.csv',csvData,"Export Raw Data");
 }
